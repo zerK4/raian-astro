@@ -1,8 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import { lazyLoad } from "../utils";
-  import { Swiper } from "swiper";
-  import "swiper/css";
   export let clicking;
   export let filteredImages;
   export let dynamicGallery;
@@ -23,12 +21,6 @@
         block: "nearest",
       });
     }, 400);
-
-    const swiper = new Swiper(".imgSwiper", {
-      loop: true,
-
-      speed: 700,
-    });
   });
 </script>
 
@@ -43,19 +35,13 @@
       dynamicGallery ? "translate-y-0" : "translate-y-[30rem]"
     } flex gap-2 movement overflow-scroll absolute bottom-2 left-0 sm:left-2 md:left-10`}
   >
-    <div class="swiper imgSwiper">
-      <div class="swiper-wrapper">
-        {#each filteredImages as image}
-          <div class="swiper-slide">
-            <img
-              use:lazyLoad={`/images${image.img}`}
-              alt={image.name}
-              class="h-36 object-cover"
-              id={`image-${image.id}`}
-            />
-          </div>
-        {/each}
-      </div>
-    </div>
+    {#each filteredImages as image}
+      <img
+        use:lazyLoad={`/raian-astro/images${image.img}`}
+        alt={image.name}
+        class="h-36 object-cover"
+        id={`image-${image.id}`}
+      />
+    {/each}
   </div>
 </div>

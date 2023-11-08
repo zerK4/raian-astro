@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
+// import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 export default function Footer() {
   const form = useRef();
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
 
           <div className='flex flex-col gap-2 items-end sm:items-center w-[50%]'>
-            <a href='https://www.facebook.com/raianvisual'>
+            {/* <a href='https://www.facebook.com/raianvisual'>
               <button className=''>
                 <AiFillFacebook className='text-3xl hover:text-[#C78665] movement' />
               </button>
@@ -106,7 +106,7 @@ export default function Footer() {
               <button className=''>
                 <AiFillYoutube className='text-3xl hover:text-[#C78665] movement' />
               </button>
-            </a>
+            </a> */}
           </div>
         </div>
 

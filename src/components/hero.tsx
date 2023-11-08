@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
+// import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Hero() {
   const [isHover, setIsHover] = useState(false);
@@ -26,11 +26,11 @@ export default function Hero() {
                 Hai să vezi portofoliul!
               </button>
             </a>
-            <AiOutlineArrowRight
+            {/* <AiOutlineArrowRight
               className={`${
                 isHover ? "translate-x-6" : "translate-x-0"
               } movement text-[#ffdd00] opacity-80`}
-            />
+            /> */}
           </div>
           <div>
             <a href='/offer'>

@@ -56,7 +56,7 @@
     {#each filteredImages.slice(1, size) as image}
       <figure class="group/img relative overflow-hidden">
         <img
-          use:lazyLoad={`/images${image.img}`}
+          use:lazyLoad={`/raian-astro/images${image.img}`}
           alt={image.name}
           class="hover:opactiy-30"
         />

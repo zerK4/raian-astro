@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import {
-  AiOutlineArrowRight,
-  AiOutlineClose,
-  AiOutlineMenu,
-} from "react-icons/ai";
+// import {
+//   AiOutlineArrowRight,
+//   AiOutlineClose,
+//   AiOutlineMenu,
+// } from "react-icons/ai";
 
 export default function Header() {
   const [isHover, setIsHover] = useState("");
@@ -39,7 +39,8 @@ export default function Header() {
           <h1 className='font-flower text-4xl'>Raian Visual</h1>
         </div>
         <button className='md:hidden flex p-2' onClick={navHandler}>
-          <AiOutlineMenu className='text-2xl hover:opacity-50 movement' />
+          {/* <AiOutlineMenu className='text-2xl hover:opacity-50 movement' /> */}
+          Menu
         </button>
         <div
           className={`${
@@ -52,22 +53,22 @@ export default function Header() {
             onClick={navHandler}
             className='md:hidden flex absolute top-4 right-4 hover:opacity-50 movement border-2 p-2 border-[#C78665] rounded-full'
           >
-            <AiOutlineClose className='text-[#C78665] ' />
+            {/* <AiOutlineClose className='text-[#C78665] ' /> */}Close
           </button>
-          <a href='/'>
+          <a href='/raian-astro/'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("home")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center'
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "home"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "home"
@@ -79,20 +80,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/photo'>
+          <a href='/raian-astro/photo'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("foto")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "foto"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "foto"
@@ -104,20 +105,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/video'>
+          <a href='/raian-astro/video'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("video")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "video"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "video"
@@ -129,20 +130,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/desc'>
+          <a href='/raian-astro/desc'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("desc")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "desc"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "desc"
@@ -154,20 +155,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/blog'>
+          <a href='/raian-astro/blog'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("blog")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "blog"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "blog"
@@ -179,20 +180,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/offer'>
+          <a href='/raian-astro/offer'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("oferta")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "oferta"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "oferta"
@@ -204,20 +205,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/policy'>
+          <a href='/raian-astro/policy'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("policy")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "policy"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "policy"
@@ -229,20 +230,20 @@ export default function Header() {
               </span>
             </button>
           </a>
-          <a href='/service'>
+          <a href='/raian-astro/service'>
             <button
               onClick={() => setNavActive(false)}
               onMouseOver={() => setIsHover("services")}
               onMouseOut={() => setIsHover("")}
               className='md:link h-10 flex gap-2 items-center '
             >
-              <AiOutlineArrowRight
+              {/* <AiOutlineArrowRight
                 className={`${
                   isHover === "services"
                     ? "translate-x-0 text-[#C78665]"
                     : "-translate-x-[100vw]"
                 } movement  flex md:hidden`}
-              />
+              /> */}
               <span
                 className={`${
                   isHover === "services"
