@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+
+@layer base {
+  img {
+    pointer-events: none;
+  }
+  a {
+    text-decoration: none;
+    height: 100%;
+  }
+  ,
+  .link {
+    position: relative;
+    height: 100%;
+    width: fit-content;
+    transition: all 0.3s cubic-bezier(0, 500, 1, 500);
+  }
+  .link::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 0;
+    bottom: 5%;
+    background: #c78665;
+    opacity: 50%;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .link:hover::before {
+    width: 100%;
+  }
+  .movement {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .view-move {
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .controlled-h {
+    height: calc(100vh - 12rem);
+  }
+  .custom-circle {
+    position: relative;
+  }
+  .custom-circle::before {
+    content: "";
+    position: absolute;
+    border: 2px solid #e85d04;
+    opacity: 70%;
+    height: 110%;
+    width: 110%;
+    transform: translateY(10px) translateX(10px);
+    border-radius: 50%;
+  }
+  .custom-circle::after {
+    content: "";
+    position: absolute;
+    border: 2px solid #ffdd00;
+    opacity: 80%;
+    height: 110%;
+    width: 110%;
+    transform: translateY(-10px) translateX(-10px);
+    border-radius: 50%;
+  }
+  .custom-title-font {
+    font-family: "Dancing Script", cursive;
+  }
+  .footer {
+    position: relative;
+  }
+
+  .image-bg {
+    background: rgb(199, 134, 101);
+    background: linear-gradient(
+      90deg,
+      rgba(199, 134, 101, 1) 0%,
+      rgba(199, 134, 101, 0.48501407398897056) 20%,
+      rgba(199, 134, 101, 1) 50%,
+      rgba(199, 134, 101, 0.5662465669861695) 77%,
+      rgba(199, 134, 101, 1) 100%
+    );
+  }
+
+  .grid-gallery {
+    @apply flex flex-wrap gap-1 justify-center mt-1;
+  }
+
+  .grid-gallery figure {
+    @apply w-full md:w-[23vw] my-1 sm:my-0;
+    height: auto !important;
+  }
+
+  .loader {
+    width: 28px;
+    height: 28px;
+    border: 3px solid rgb(199, 134, 101);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FF3D00;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  
+  .bg {
+    background: rgb(199, 134, 101);
+  }
+}

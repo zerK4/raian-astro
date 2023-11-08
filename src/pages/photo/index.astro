@@ -1,0 +1,18 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import PhotoHeader from "../../components/PhotoHeader.svelte";
+import PhotoList from "../../components/PhotoList.svelte";
+---
+
+<DefaultLayout title='Images page'>
+  <div
+    class='min-h-screen overflow-hidden md:px-0 mx-auto w-full flex flex-col items-center'
+  >
+    <PhotoHeader client:visible />
+    <div class='w-full xl:w-[70%]'>
+      <PhotoList client:visible />
+    </div>
+  </div>
+</DefaultLayout>
+
+<script lang='ts' is:inline></script>
