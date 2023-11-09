@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { caretRight } from "./icons";
 
 export default function Hero() {
   const [isHover, setIsHover] = useState(false);
@@ -7,7 +8,7 @@ export default function Hero() {
     <div className='w-full controlled-h flex items-center justify-center'>
       <div className='h-[100%] w-full flex justify-center items-center bg-whiterounded-full'>
         <img
-          src='/assets/hero1.jpg'
+          src='raian-astro/assets/hero1.jpg'
           className='h-screen object-cover'
           alt='Hero image'
         />
@@ -26,11 +27,13 @@ export default function Hero() {
                 Hai să vezi portofoliul!
               </button>
             </a>
-            {/* <AiOutlineArrowRight
+            <span
               className={`${
                 isHover ? "translate-x-6" : "translate-x-0"
               } movement text-[#ffdd00] opacity-80`}
-            /> */}
+            >
+              {caretRight}
+            </span>
           </div>
           <div>
             <a href='/offer'>

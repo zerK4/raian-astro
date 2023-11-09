@@ -88,8 +88,8 @@
     @apply flex flex-wrap gap-1 justify-center mt-1;
   }
 
-  .grid-gallery figure {
-    @apply w-full md:w-[23vw] my-1 sm:my-0;
+  figure {
+    @apply w-full md:w-[24.3vw] my-1 sm:my-0;
     height: auto !important;
   }
 

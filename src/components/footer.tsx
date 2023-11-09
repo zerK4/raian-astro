@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 // import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
@@ -29,7 +29,7 @@ export default function Footer() {
           "6-MZbtZGGmjQiqKg-"
         )
         .then(
-          (result: any) => {
+          (result) => {
             setIsLoading(false);
             setSent("sent");
             console.log(result);
@@ -38,7 +38,7 @@ export default function Footer() {
               setSent("");
             }, 3000);
           },
-          (error: any) => {
+          (error) => {
             setIsLoading(false);
             setSent("error");
             console.log(error);
@@ -61,72 +61,58 @@ export default function Footer() {
   };
   const year = new Date().getFullYear();
   return (
-    <div className='h-fit py-10 mt-10 text-neutral-300 flex justify-center items-center footer bg-neutral-900'>
-      <div className='flex justify-between sm:flex-row flex-col gap-10 items-center lg:w-[60%] px-6 w-full '>
-        <div className='flex items-center sm:justify-start w-[60%]'>
-          <div className='flex flex-col h-fit gap-2 items-start text-sm w-[50%]'>
-            <a href='/'>
-              <button className='link relative'>Home</button>
-            </a>
-            <a href='/photo'>
-              <button className='link relative'>Galerie Foto</button>
-            </a>
-            <a href='/video'>
-              <button className='link relative'>Galerie Video</button>
-            </a>
-            <a href='/desc'>
-              <button className='link relative'>Blog I</button>
-            </a>
-            <a href='/blog'>
-              <button className='link relative'>Blog II</button>
-            </a>
-            <a href='/offer'>
-              <button className='link relative'>Oferte</button>
-            </a>
-            <a href='/policy'>
-              <button className='link relative'>Policy</button>
-            </a>
-            <a href='/service'>
-              <button className='link relative'>Servicii</button>
-            </a>
+    <div className='footer flex h-fit items-center justify-center bg-neutral-900 py-10 text-neutral-300'>
+      <div className='flex w-full flex-col items-center justify-between gap-10 px-6 sm:flex-row '>
+        <div className='flex w-[60%] flex-col items-start gap-10'>
+          <div className='flex w-full items-start justify-start md:w-[60%]'>
+            <div className='flex h-fit w-[80%] flex-col gap-2 text-sm'>
+              <a href='/'>
+                <button className='link relative'>Home</button>
+              </a>
+              <a href='/photo'>
+                <button className='link relative'>Galerie Foto</button>
+              </a>
+              <a href='/video'>
+                <button className='link relative'>Galerie Video</button>
+              </a>
+              <a href='/desc'>
+                <button className='link relative'>Blog</button>
+              </a>
+              <a href='/offer'>
+                <button className='link relative'>Oferta</button>
+              </a>
+            </div>
+
+            {/* <div className='flex w-[50%] flex-col items-end gap-2 sm:items-center'>
+              <a href='https://www.facebook.com/raianvisual'>
+                <button className=''>
+                  <AiFillFacebook className='movement text-3xl hover:text-[#C78665]' />
+                </button>
+              </a>
+              <a href='https://www.instagram.com/raianvisual/'>
+                <button className=''>
+                  <AiFillInstagram className='movement text-3xl hover:text-[#C78665]' />
+                </button>
+              </a>
+              <a href='https://www.youtube.com/channel/UCggJuYrzABVg4Th0BplYvdg'>
+                <button className=''>
+                  <AiFillYoutube className='movement text-3xl hover:text-[#C78665]' />
+                </button>
+              </a>
+            </div> */}
           </div>
 
-          <div className='flex flex-col gap-2 items-end sm:items-center w-[50%]'>
-            {/* <a href='https://www.facebook.com/raianvisual'>
-              <button className=''>
-                <AiFillFacebook className='text-3xl hover:text-[#C78665] movement' />
-              </button>
-            </a>
-            <a href='https://www.instagram.com/raianvisual/'>
-              <button className=''>
-                <AiFillInstagram className='text-3xl hover:text-[#C78665] movement' />
-              </button>
-            </a>
-            <a href='https://youtube.com/@raianvisual2041'>
-              <button className=''>
-                <AiFillYoutube className='text-3xl hover:text-[#C78665] movement' />
-              </button>
-            </a> */}
+          <div className='flex items-center justify-center gap-2 bg-white'>
+            <iframe
+              src='https://www.fearlessphotographers.com/banner-display.cfm?photogID=2006'
+              className='w-40'
+            />
           </div>
-        </div>
-
-        <div className='flex flex-col gap-2 items-center'>
-          <iframe
-            src='https://www.fearlessphotographers.com/banner-display.cfm?photogID=2006'
-            scrolling='no'
-            frameBorder='0'
-            style={{
-              border: "1px solid #ccc",
-              overflow: "hidden",
-              width: "148px",
-              height: "148px",
-            }}
-          />
         </div>
 
         <form
           ref={form}
-          className='flex flex-col gap-2 w-full sm:w-[50%]'
+          className='flex w-full flex-col gap-2 sm:w-[50%]'
           id='contact'
         >
           <div className='flex flex-col'>
@@ -136,7 +122,7 @@ export default function Footer() {
               value={email}
               name='email'
               type='email'
-              className='h-[2.5rem] rounded-md outline-none focus:border-[#C78665] border-2 border-neutral-800 px-2 movement bg-neutral-800 placeholder:text-sm'
+              className='movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]'
               placeholder='email@email.com'
             />
           </div>
@@ -147,7 +133,7 @@ export default function Footer() {
               value={name}
               name='name'
               type='text'
-              className='h-[2.5rem] rounded-md outline-none focus:border-[#C78665] border-2 border-neutral-800 px-2 movement bg-neutral-800 placeholder:text-sm'
+              className='movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]'
               placeholder='Nume, Prenume'
             />
           </div>
@@ -158,7 +144,7 @@ export default function Footer() {
               value={date}
               name='date'
               type='date'
-              className='h-[2.5rem] rounded-md outline-none focus:border-[#C78665] border-2 border-neutral-800 px-2 movement bg-neutral-800 placeholder:text-sm'
+              className='movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]'
               placeholder='Alegeti data'
             />
           </div>
@@ -169,7 +155,7 @@ export default function Footer() {
               value={type}
               name='type'
               type='text'
-              className='h-[2.5rem] rounded-md outline-none focus:border-[#C78665] border-2 border-neutral-800 px-2 movement bg-neutral-800 placeholder:text-sm'
+              className='movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]'
               placeholder='Nunta, botez, etc.'
             />
           </div>
@@ -180,17 +166,17 @@ export default function Footer() {
               value={phone}
               name='phone'
               type='text'
-              className='h-[2.5rem] rounded-md outline-none focus:border-[#C78665] border-2 border-neutral-800 px-2 movement bg-neutral-800 placeholder:text-sm'
+              className='movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]'
               placeholder='0000 000 000'
             />
           </div>
           <button
             onClick={(e) => sendEmail(e)}
             type='submit'
-            className={`h-[2.5rem] bg-[#C78665] flex items-center justify-center rounded-md text-white hover:opacity-100 movement ${
+            className={`movement flex h-[2.5rem] items-center justify-center rounded-md bg-[#C78665] text-white hover:opacity-100 ${
               completeError !== ""
-                ? "text-red-500 font-semibold opacity-100"
-                : "text-white font-normal opacity-50"
+                ? "font-semibold text-red-500 opacity-100"
+                : "font-normal text-white opacity-50"
             }`}
           >
             {isLoading ? (
@@ -206,7 +192,7 @@ export default function Footer() {
         </form>
       </div>
       <div className='absolute bottom-2 w-full text-center'>
-        &copy; Raian Visual {year}
+        &copy; Raian Visual 2018-{year}
       </div>
     </div>
   );

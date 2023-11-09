@@ -1,47 +1,54 @@
 <script>
   import { onMount } from "svelte";
   import { lazyLoad } from "../utils";
+  import ImageGallery from "@react2svelte/image-gallery";
+  import { convertCompilerOptionsFromJson } from "typescript";
+  import { caretRight } from "./icons";
   export let clicking;
   export let filteredImages;
   export let dynamicGallery;
   export let imageId;
   let el;
-
+  $: idImage = imageId + 1;
   onMount(() => {
     document.body.style.overflow = "hidden";
-    console.log(filteredImages, imageId, "the data");
-    el = document.querySelector(`#image-${imageId}`);
-
-    console.log(el, "the element");
-
-    setTimeout(() => {
-      el.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
-    }, 400);
   });
+
+  const handleSwitch = (id) => {
+    idImage = id;
+  };
 </script>
 
 <div
   class="h-screen w-screen fixed left-0 top-0 bg-black-30 backdrop-blur-sm z-50"
 >
-  <button on:click={clicking} class="absolute top-2 right-2 p-2 bg-orange-400"
-    >Close</button
+  <button
+    on:click={clicking}
+    class="absolute top-2 right-2 p-2 bg-orange-400 z-50">Close</button
   >
-  <div
-    class={`${
-      dynamicGallery ? "translate-y-0" : "translate-y-[30rem]"
-    } flex gap-2 movement overflow-scroll absolute bottom-2 left-0 sm:left-2 md:left-10`}
-  >
-    {#each filteredImages as image}
-      <img
-        use:lazyLoad={`/raian-astro/images${image.img}`}
-        alt={image.name}
-        class="h-36 object-cover"
-        id={`image-${image.id}`}
-      />
-    {/each}
-  </div>
+  {#if filteredImages}
+    <div class="absolute top-0 left-0 h-screen bg-black/10 w-full">
+      {#each filteredImages as image, i (i)}
+        <img
+          src={`/raian-astro/images${filteredImages[idImage].img}`}
+          alt={filteredImages[idImage].name}
+          class="h-screen w-screen object-contain"
+        />
+      {/each}
+      <button
+        on:click={() => handleSwitch(idImage + 1)}
+        class="h-screen top-0 right-0 w-20 flex justify-center items-center z-40 absolute text-orange-400"
+        ><span class="p-2 bg-black rounded-full border border-neutral-500">
+          {@html caretRight}</span
+        ></button
+      >
+      <button
+        on:click={() => handleSwitch(idImage - 1)}
+        class="h-screen top-0 left-0 w-20 flex justify-center items-center z-40 absolute text-orange-400 rotate-180"
+        ><span class="p-2 bg-black rounded-full border border-neutral-500">
+          {@html caretRight}</span
+        ></button
+      >
+    </div>
+  {/if}
 </div>

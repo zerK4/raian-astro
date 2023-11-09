@@ -48,20 +48,20 @@
 <div
   class={`${
     filteredImages.length !== 0
-      ? "md:grid-gallery"
+      ? "flex flex-col sm:flex-row sm:flex-wrap mt-1 md:justify-center gap-2"
       : "flex justify-center items-center my-6"
   }`}
 >
   {#if filteredImages.length !== 0}
-    {#each filteredImages.slice(1, size) as image}
+    {#each filteredImages.slice(1, size) as image, index}
       <figure class="group/img relative overflow-hidden">
         <img
           use:lazyLoad={`/raian-astro/images${image.img}`}
           alt={image.name}
-          class="hover:opactiy-30"
+          class="hover:opactiy-30 max-h-[90vh]"
         />
         <button
-          on:click={() => handleAssign(image.id)}
+          on:click={() => handleAssign(index)}
           class="group-hover/img:h-full group-hover/img:w-full rounded-full cursor-pointer group-hover/img:rounded-none h-10 w-10 group-hover/img:bg-black/10 group-hover/img:backdrop-blur-sm top-0 left-0 right-0 bottom-0 mx-auto my-auto movement absolute"
         />
       </figure>
@@ -94,6 +94,7 @@
     opacity: 0;
     transition: all 5s ease;
     height: 100% !important;
+    width: 100%;
     @apply object-cover;
   }
 </style>
