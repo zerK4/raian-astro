@@ -89,7 +89,7 @@
   }
 
   figure {
-    @apply w-full md:w-[24.3vw] my-1 sm:my-0;
+    @apply w-full sm:w-[30vw] lg:w-[24.3vw] my-1 sm:my-0;
     height: auto !important;
   }
 

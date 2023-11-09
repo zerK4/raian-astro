@@ -4,10 +4,11 @@ let options = {
   threshold: 0,
 };
 
-export const lazyLoad = (image, src) => {
+export const lazyLoad = (image: any, src: any) => {
   const loaded = () => {
     image.classList.add("visible");
     image.style.opacity = "1"; // REPL hack to apply loading animation
+    image.classList.remove("animate-pulse");
   };
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
@@ -16,6 +17,7 @@ export const lazyLoad = (image, src) => {
         // check if instantly loaded
         loaded();
       } else {
+        image.classList.add("animate-pulse");
         image.addEventListener("load", loaded); // if the image isn't loaded yet, add an event listener
       }
     }

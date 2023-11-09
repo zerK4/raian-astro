@@ -40,6 +40,9 @@
   };
 
   const handleAssign = (id) => {
+    if (window.innerWidth < 768) {
+      return;
+    }
     dynamicGallery = true;
     imageId = id;
   };
@@ -50,11 +53,11 @@
     filteredImages.length !== 0
       ? "flex flex-col sm:flex-row sm:flex-wrap mt-1 md:justify-center gap-2"
       : "flex justify-center items-center my-6"
-  }`}
+  } min-h-[20vh]`}
 >
   {#if filteredImages.length !== 0}
-    {#each filteredImages.slice(1, size) as image, index}
-      <figure class="group/img relative overflow-hidden">
+    {#each filteredImages as image, index}
+      <figure class="group/img relative overflow-hidden min-h-[20vh]">
         <img
           use:lazyLoad={`/raian-astro/images${image.img}`}
           alt={image.name}
@@ -72,13 +75,6 @@
     </div>
   {/if}
 </div>
-{#if filteredImages.length > size}
-  <div class="w-full flex items-center justify-center mt-1">
-    <button on:click={handleLoad} class="w-[90%] bg p-2 rounded-md"
-      >Incarca mai multe</button
-    >
-  </div>
-{/if}
 
 {#if dynamicGallery}
   <DynamicGallery

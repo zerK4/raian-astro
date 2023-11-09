@@ -31,7 +31,7 @@ export default function Header() {
       className={`${
         scrolling === true
           ? "fixed h-14 z-40 bg-opacity-60 backdrop-blur-md"
-          : "relative h-[7rem] bg-opacity-70"
+          : "fixed h-[7rem] bg-opacity-70"
       } w-full bg-black px-2 text-white movement`}
     >
       <div className='flex items-center justify-between mx-auto w-full lg:w-[90%] xl:w-[70%] h-full'>

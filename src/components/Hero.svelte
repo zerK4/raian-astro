@@ -2,12 +2,12 @@
   import { caretRight } from "./icons";
 </script>
 
-<div class="w-full controlled-h flex items-center justify-center">
+<div class="w-full flex items-center justify-center">
   <div
     class="h-[100%] w-full flex justify-center items-center bg-whiterounded-full"
   >
     <img
-      src="raian-astro/assets/hero1.jpg"
+      src="/raian-astro/assets/hero1.jpg"
       class="h-screen w-screen object-cover"
       alt="Hero"
     />
