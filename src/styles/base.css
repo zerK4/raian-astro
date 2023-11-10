@@ -65,9 +65,10 @@
     transform: translateY(-10px) translateX(-10px);
     border-radius: 50%;
   }
-  .custom-title-font {
+  /* .custom-title-font {
+    
     font-family: "Dancing Script", cursive;
-  }
+  } */
   .footer {
     position: relative;
   }
