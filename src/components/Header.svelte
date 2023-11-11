@@ -72,9 +72,9 @@
     <div
       class={`${
         navActive
-          ? "translate-y-0 h-fit pb-[100vh] bg-black/80"
+          ? "translate-y-0  bg-black/80 flex flex-col justify-end h-screen"
           : "-translate-y-[300vw] md:translate-y-0 bg-transparent"
-      } fixed items-start pt-20 md:pt-0 px-10 z-40 movement backdrop-blur-sm h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:relative flex md:items-center md:gap-6 md:h-full`}
+      } fixed items-start pt-20 md:pt-0 md:px-10 z-40 movement backdrop-blur-sm h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:relative flex md:items-center md:gap-6 md:h-full`}
     >
       <button
         on:click={navHandler}
@@ -83,7 +83,7 @@
         {@html closeBu}
       </button>
       <div
-        class="flex flex-col md:flex-row items-end md:items-center gap-4 md:gap-4 absolute md:relative bottom-28 right-4 md:bottom-0 md:right-0"
+        class="flex flex-col w-full md:w-fit pb-4 md:pb-0 md:flex-row items-end md:items-center gap-4 md:gap-4"
       >
         {#each navItems as item, i}
           <a href={item.link} class="flex items-center md:link group/navItem">
