@@ -59,7 +59,7 @@
     {#each filteredImages as image, index}
       <figure class="group/img relative overflow-hidden min-h-[20vh]">
         <img
-          use:lazyLoad={`${import.meta.env.BASE_URL}images${image.img}`}
+          use:lazyLoad={`${import.meta.env.PUBLIC_BASE_URL}images${image.img}`}
           alt={image.name}
           class="hover:opactiy-30 max-h-[90vh]"
         />

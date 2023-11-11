@@ -5,31 +5,31 @@
   const navItems = [
     {
       name: "Home",
-      link: `${import.meta.env.BASE_URL}`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}`,
     },
     {
       name: "Galerie Foto",
-      link: `${import.meta.env.BASE_URL}photo`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}photo`,
     },
     {
       name: "Galerie Video",
-      link: `${import.meta.env.BASE_URL}video`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}video`,
     },
     {
       name: "Blog",
-      link: `${import.meta.env.BASE_URL}blog`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}blog`,
     },
     {
       name: "Oferte",
-      link: `${import.meta.env.BASE_URL}oferte`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}oferte`,
     },
     {
       name: "Politica",
-      link: `${import.meta.env.BASE_URL}politica`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}politica`,
     },
     {
       name: "Servicii",
-      link: `${import.meta.env.BASE_URL}servicii`,
+      link: `${import.meta.env.PUBLIC_BASE_URL}servicii`,
     },
   ];
 
@@ -57,10 +57,8 @@
 
 <div
   class={`${
-    scrolling === true
-      ? "fixed h-14 z-40 bg-opacity-60 backdrop-blur-md"
-      : "fixed h-[7rem] bg-opacity-70"
-  } w-full bg-black px-2 text-white movement z-50`}
+    scrolling === true ? "h-14 z-40" : "h-[7rem]"
+  } w-full fixed bg-black/30 backdrop-blur-md px-2 text-white movement z-50`}
 >
   <div
     class="flex items-center justify-between mx-auto w-full lg:w-[90%] xl:w-[70%] h-full"
@@ -74,9 +72,9 @@
     <div
       class={`${
         navActive
-          ? "translate-y-0 h-fit pb-[100vh]"
-          : "-translate-y-[300vw] md:translate-y-0"
-      } fixed items-start pt-20 md:pt-0 px-10 z-40 movement bg-black/80 backdrop-blur-sm h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:bg-transparent md:relative flex md:items-center md:gap-6  md:h-full`}
+          ? "translate-y-0 h-fit pb-[100vh] bg-black/80"
+          : "-translate-y-[300vw] md:translate-y-0 bg-transparent"
+      } fixed items-start pt-20 md:pt-0 px-10 z-40 movement backdrop-blur-sm h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:relative flex md:items-center md:gap-6 md:h-full`}
     >
       <button
         on:click={navHandler}
