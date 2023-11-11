@@ -5,31 +5,31 @@
   const navItems = [
     {
       name: "Home",
-      link: `${import.meta.env.PUBLIC_BASE_URL}`,
+      link: `/raian-astro/`,
     },
     {
       name: "Galerie Foto",
-      link: `${import.meta.env.PUBLIC_BASE_URL}photo`,
+      link: `/raian-astro/photo`,
     },
     {
       name: "Galerie Video",
-      link: `${import.meta.env.PUBLIC_BASE_URL}video`,
+      link: `/raian-astro/video`,
     },
     {
       name: "Blog",
-      link: `${import.meta.env.PUBLIC_BASE_URL}blog`,
+      link: `/raian-astro/blog`,
     },
     {
       name: "Oferte",
-      link: `${import.meta.env.PUBLIC_BASE_URL}oferte`,
+      link: `/raian-astro/oferte`,
     },
     {
       name: "Politica",
-      link: `${import.meta.env.PUBLIC_BASE_URL}politica`,
+      link: `/raian-astro/politica`,
     },
     {
       name: "Servicii",
-      link: `${import.meta.env.PUBLIC_BASE_URL}servicii`,
+      link: `/raian-astro/servicii`,
     },
   ];
 

@@ -45,7 +45,7 @@
 
 <div class="relative h-[35vh]">
   <img
-    src={`${import.meta.env.PUBLIC_BASE_URL}assets/hero1.jpg`}
+    src={`/raian-astro/assets/hero1.jpg`}
     alt="hero"
     class="h-[35vh] w-screen object-cover"
   />
