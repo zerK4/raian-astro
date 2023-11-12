@@ -12,7 +12,7 @@ export const lazyLoad = (image: any, src: any) => {
   };
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
-      image.src = src; // replace placeholder src with the image src on observe
+      image.nodeName === "IMG" ? (image.src = src) : (image.src = src.video);
       if (image.complete) {
         // check if instantly loaded
         loaded();
@@ -29,4 +29,16 @@ export const lazyLoad = (image: any, src: any) => {
       image.removeEventListener("load", loaded); // clean up the event listener
     },
   };
+};
+
+export const checkMediaType = (url: string) => {
+  const lowercasedUrl = url.toLowerCase();
+
+  if (lowercasedUrl.includes("video")) {
+    return "video";
+  } else if (lowercasedUrl.includes("photo")) {
+    return "photo";
+  } else {
+    return "unknown";
+  }
 };
