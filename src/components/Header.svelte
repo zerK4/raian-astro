@@ -72,9 +72,9 @@
     <div
       class={`${
         navActive
-          ? "translate-y-0  bg-black/80 flex flex-col justify-end h-screen"
+          ? "translate-y-0 bg-black/90 flex flex-col justify-end h-screen backdrop-blur-sm"
           : "-translate-y-[300vw] md:translate-y-0 bg-transparent"
-      } fixed items-start pt-20 md:pt-0 md:px-10 z-40 movement backdrop-blur-sm h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:relative flex md:items-center md:gap-6 md:h-full`}
+      } fixed items-start pt-20 md:pt-0 md:px-10 z-40 movement h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:relative flex md:items-center md:gap-6 md:h-full`}
     >
       <button
         on:click={navHandler}
