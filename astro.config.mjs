@@ -8,5 +8,5 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   integrations: [tailwind(), react(), svelte()],
   site: "https://zerK4.github.io",
-  base: "/raian-astro/",
+  base: "/raian-astro",
 });
