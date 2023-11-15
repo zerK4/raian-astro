@@ -1,3 +1,6 @@
+import type { EmailMessageType } from "../types/defaults";
+import every from "lodash/every";
+
 let options = {
   root: null,
   rootMargin: "0px",
@@ -41,4 +44,11 @@ export const checkMediaType = (url: string) => {
   } else {
     return "unknown";
   }
+};
+
+export const isComplete = (object: EmailMessageType) => {
+  return every(
+    object,
+    (value: any) => value !== "" && value !== undefined && value !== null
+  );
 };

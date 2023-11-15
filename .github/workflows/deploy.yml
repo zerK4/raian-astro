@@ -18,6 +18,7 @@ jobs:
   build:
     env:
       PUBLIC_BASE_URL: ${{ secrets.PUBLIC_BASE_URL }}
+      PUBLIC_EMAIL_API: ${{ secrets.PUBLIC_EMAIL_API }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
