@@ -17,18 +17,18 @@ permissions:
 jobs:
   build:
     env:
-      PUBLIC_BASE_URL: ${{ secrets.PUBLIC_BASE_URL }}
-      PUBLIC_EMAIL_API: ${{ secrets.PUBLIC_EMAIL_API }}
+      PUBLIC_BASE_URL: ${{ env.PUBLIC_BASE_URL }}
+      PUBLIC_EMAIL_API: ${{ env.PUBLIC_EMAIL_API }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
         uses: withastro/action@v1
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 18 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      - name: Display env variables
+        run: |
+          echo "Public email api address is: ${{ env.PUBLIC_EMAIL_API }}"
+          echo "Public base path is: $PUBLIC_BASE_URL"
 
   deploy:
     needs: build
