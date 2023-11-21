@@ -5,31 +5,31 @@
   const navItems = [
     {
       name: "Home",
-      link: `/raian-astro/`,
+      link: `/`,
     },
     {
       name: "Galerie Foto",
-      link: `/raian-astro/photo`,
+      link: `/photo`,
     },
     {
       name: "Galerie Video",
-      link: `/raian-astro/video`,
+      link: `/video`,
     },
     {
       name: "Blog",
-      link: `/raian-astro/blog`,
+      link: `/blog`,
     },
     {
       name: "Oferte",
-      link: `/raian-astro/oferte`,
+      link: `/oferte`,
     },
     {
       name: "Politica",
-      link: `/raian-astro/politica`,
+      link: `/politica`,
     },
     {
       name: "Servicii",
-      link: `/raian-astro/servicii`,
+      link: `/servicii`,
     },
   ];
 

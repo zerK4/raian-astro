@@ -9,7 +9,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [tailwind(), react(), svelte()],
   site: "https://zerK4.github.io",
-  base: "/raian-astro",
+  base: "/",
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
 });

@@ -70,7 +70,7 @@
       <figure class="group/img relative overflow-hidden min-h-[20vh]">
         {#if checkMediaType(window.location.pathname) === "photo"}
           <img
-            use:lazyLoad={`/raian-astro/images${image.img}`}
+            use:lazyLoad={`/images${image.img}`}
             alt={image.name}
             class="hover:opactiy-30 max-h-[90vh]"
           />
@@ -86,7 +86,7 @@
           />
         {:else}
           <img
-            use:lazyLoad={`/raian-astro/images${image.img}`}
+            use:lazyLoad={`/images${image.img}`}
             alt={image.name}
             class="hover:opactiy-30 max-h-[90vh]"
           />

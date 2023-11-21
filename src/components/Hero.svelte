@@ -7,7 +7,7 @@
     class="h-[100%] w-full flex justify-center items-center bg-whiterounded-full"
   >
     <img
-      src={`/raian-astro/assets/hero1.jpg`}
+      src={`/assets/hero1.jpg`}
       class="h-screen w-screen object-cover"
       alt="Hero"
     />
@@ -16,7 +16,7 @@
     >
       <h1 class="sm:text-[4rem] text-[3rem] font-flower">Raian Visual</h1>
       <div class="group/bh flex gap-2 items-center z-30">
-        <a href={`/raian-astro/photo`}>
+        <a href={`/photo`}>
           <button class=""> Hai să vezi portofoliul! </button>
         </a>
         <span

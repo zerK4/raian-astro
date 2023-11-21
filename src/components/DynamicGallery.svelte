@@ -30,7 +30,7 @@
     <div class="absolute top-0 left-0 h-screen bg-black/10 w-full">
       {#each filteredImages as image, i (i)}
         <img
-          src={`/raian-astro/images${filteredImages[idImage].img}`}
+          src={`/images${filteredImages[idImage].img}`}
           alt={filteredImages[idImage].name}
           class="h-screen w-screen object-contain"
         />
