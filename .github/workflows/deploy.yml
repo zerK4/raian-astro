@@ -17,8 +17,8 @@ permissions:
 jobs:
   build:
     env:
-      PUBLIC_BASE_URL: ${{ env.PUBLIC_BASE_URL }}
-      PUBLIC_EMAIL_API: ${{ env.PUBLIC_EMAIL_API }}
+      PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL }}
+      PUBLIC_EMAIL_API: ${{ vars.PUBLIC_EMAIL_API }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -27,7 +27,7 @@ jobs:
         uses: withastro/action@v1
       - name: Display env variables
         run: |
-          echo "Public email api address is: ${{ env.PUBLIC_EMAIL_API }}"
+          echo "Public email api address is: ${{ vars.PUBLIC_EMAIL_API }}"
           echo "Public base path is: $PUBLIC_BASE_URL"
 
   deploy:
