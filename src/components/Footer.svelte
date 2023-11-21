@@ -2,15 +2,7 @@
   import { facebookIcon, instagramIcon, youtubeIcon } from "./icons";
   import { isComplete } from "../utils/index";
   import axios from "axios";
-
-  interface UserFormInterface {
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-    date: any;
-    event: string;
-  }
+  import type { UserFormInterface } from "../types/defaults";
 
   let completeError: any;
   let loading: boolean = false;
@@ -31,8 +23,7 @@
   const sendEmail = async (e: any) => {
     e.preventDefault();
 
-    console.log(user, import.meta.env.PUBLIC_EMAIL_API, "tje data");
-    if (!isComplete) {
+    if (!isComplete(user)) {
       return;
     }
 
@@ -48,10 +39,11 @@
           data: user,
         },
       });
-      console.log(data);
+      console.log(data, "returning data");
       sent = true;
     } catch (err: any) {
-      console.log(err.message);
+      alert("Please complete all the fields!");
+      console.log(err.message, "this is an error");
     } finally {
       loading = false;
     }
@@ -189,11 +181,11 @@
       >
         {#if loading}
           <span class="loader h-6 w-6 border-[2px]" />
-        {/if}
-        {#if sent}
+        {:else if sent}
           <span class="">Mesaj trimis!</span>
+        {:else}
+          <span class="">Trimite</span>
         {/if}
-        <span class="">Trimite!</span>
       </button>
     </form>
   </div>

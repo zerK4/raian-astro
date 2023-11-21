@@ -1,4 +1,4 @@
-import type { EmailMessageType } from "../types/defaults";
+import type { EmailMessageType, UserFormInterface } from "../types/defaults";
 import every from "lodash/every";
 
 let options = {
@@ -46,7 +46,7 @@ export const checkMediaType = (url: string) => {
   }
 };
 
-export const isComplete = (object: EmailMessageType) => {
+export const isComplete = (object: UserFormInterface) => {
   return every(
     object,
     (value: any) => value !== "" && value !== undefined && value !== null

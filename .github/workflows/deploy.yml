@@ -28,7 +28,7 @@ jobs:
       - name: Display env variables
         run: |
           echo "Public email api address is: ${{ vars.PUBLIC_EMAIL_API }}"
-          echo "Public base path is: $PUBLIC_BASE_URL"
+          echo "Public base path is: ${{ vars.PUBLIC_BASE_URL }}"
 
   deploy:
     needs: build
