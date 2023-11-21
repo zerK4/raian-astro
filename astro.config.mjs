@@ -11,5 +11,9 @@ export default defineConfig({
   site: "https://zerK4.github.io",
   base: "/",
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
