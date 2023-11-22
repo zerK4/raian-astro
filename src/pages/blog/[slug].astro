@@ -9,64 +9,27 @@ export const prerender = true;
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const data: any = await fetchApi({ endpoint: "blogs" });
-    console.log(data, "the blog");
     if (!data || data.length === 0) {
       return [];
     }
 
-    const paths = data?.data?.map(
-      ({
-        id,
-        attributes: {
-          name,
-          createdAt,
-          publishedAt,
-          content,
-          by,
-          date,
-          buttonName,
-          slug,
-        },
-      }: {
-        id: string;
-        attributes: {
-          name: string;
-          createdAt: string;
-          publishedAt: string;
-          content: string;
-          by: string;
-          date: string;
-          buttonName: string;
-          slug: string;
-        };
-      }) => ({
-        params: { slug },
-        props: {
-          name,
-          createdAt,
-          publishedAt,
-          content,
-          by,
-          date,
-          buttonName,
-          slug,
-          id,
-        },
-      })
-    );
-
-    return paths;
+    return data.data.map((blog: any) => {
+      console.log(blog);
+      return {
+        params: { slug: blog.attributes.slug },
+        props: { blog },
+      };
+    });
   } catch (error) {
     console.error("Error fetching blog data:", error);
     return [];
   }
 };
 
-const { slug, id, name, content, author, categories } = Astro.props;
-
-console.log(Astro.props, "the props");
+const { blog } = Astro.props;
+console.log(blog);
 ---
 
-<DefaultLayout title={name}>
-  <BlogContainer client:visible blog={Astro.props} />
+<DefaultLayout title={"blog.id"}>
+  <BlogContainer client:visible blog={blog.attributes} />
 </DefaultLayout> -->
