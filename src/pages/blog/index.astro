@@ -1,36 +1,16 @@
-<!-- ---
+---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import BlogBanner from "../../components/blog/BlogBanner.svelte";
-import axios from "axios";
+import fetchApi from "../../utils/strapi";
+import BlogCard from "../../components/BlogCard.svelte";
 
-const { data } = await axios.get("http://localhost:3000/api/blog");
-
-console.log(data, " the blogs");
+const data: [] = await fetchApi({ endpoint: "blogs", wrappedByKey: "data" });
+console.log(data, "te data");
 ---
 
 <DefaultLayout title='BLog page'>
   <BlogBanner />
-  {
-    data.data.map(
-      ({
-        id,
-        name,
-        author,
-        content,
-        categories,
-        slug,
-      }: {
-        id: string;
-        name: string;
-        author: string;
-        content: string;
-        categories: string;
-        slug: string;
-      }) => (
-        <a href={`/blog/${slug}`} class=''>
-          <h1 class='text-white'>{name}</h1>
-        </a>
-      )
-    )
-  }
-</DefaultLayout> -->
+  <div class='p-4'>
+    {data.map((blog) => <BlogCard blog={blog} />)}
+  </div>
+</DefaultLayout>

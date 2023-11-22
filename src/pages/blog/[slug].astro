@@ -1,0 +1,72 @@
+---
+import type { GetStaticPaths } from "astro";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import fetchApi from "../../utils/strapi";
+import BlogContainer from "../../components/BlogContainer.svelte";
+
+export const prerender = true;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  try {
+    const data: any = await fetchApi({ endpoint: "blogs" });
+    console.log(data, "the blog");
+    if (!data || data.length === 0) {
+      return [];
+    }
+
+    const paths = data?.data?.map(
+      ({
+        id,
+        attributes: {
+          name,
+          createdAt,
+          publishedAt,
+          content,
+          by,
+          date,
+          buttonName,
+          slug,
+        },
+      }: {
+        id: string;
+        attributes: {
+          name: string;
+          createdAt: string;
+          publishedAt: string;
+          content: string;
+          by: string;
+          date: string;
+          buttonName: string;
+          slug: string;
+        };
+      }) => ({
+        params: { slug },
+        props: {
+          name,
+          createdAt,
+          publishedAt,
+          content,
+          by,
+          date,
+          buttonName,
+          slug,
+          id,
+        },
+      })
+    );
+
+    return paths;
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    return [];
+  }
+};
+
+const { slug, id, name, content, author, categories } = Astro.props;
+
+console.log(Astro.props, "the props");
+---
+
+<DefaultLayout title={name}>
+  <BlogContainer client:visible blog={Astro.props} />
+</DefaultLayout> -->
