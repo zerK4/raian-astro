@@ -5,7 +5,6 @@ import fetchApi from "../../utils/strapi";
 import BlogCard from "../../components/BlogCard.svelte";
 
 const data: [] = await fetchApi({ endpoint: "blogs", wrappedByKey: "data" });
-console.log(data, "te data");
 ---
 
 <DefaultLayout title='BLog page'>

@@ -4,7 +4,7 @@
 
   const { content } = blog;
 
-  console.log(blog, "the blog");
+  console.log(blog, "the blog FE");
 </script>
 
 <div class=" text-white">
