@@ -1,0 +1,16 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import fetchApi from "../../utils/strapi";
+
+try {
+  const data = await fetchApi({ endpoint: "ofertes?populate=*" });
+
+  console.log(data, "the reveiced data");
+} catch (err) {
+  console.log(err.message);
+}
+---
+
+<DefaultLayout title='Oferte || Raian Visual'>
+  <div class='py-40 text-white'>Pagina cu oferte</div>
+</DefaultLayout>

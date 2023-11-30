@@ -56,7 +56,7 @@
   <div
     class="flex w-full flex-col items-center justify-between gap-10 px-6 sm:flex-row"
   >
-    <div class="flex w-[60%] flex-col items-start gap-10">
+    <div class="flex w-full md:px-0 md:w-[60%] flex-col items-start gap-10">
       <div class="flex w-full items-start justify-start md:w-[60%]">
         <div class="flex h-fit w-[80%] flex-col gap-2 text-sm">
           <a href="/">
@@ -101,12 +101,24 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-center gap-2 bg-white">
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-2 w-full"
+      >
         <iframe
           title="Raian visual on fearless photographers."
           src="https://www.fearlessphotographers.com/banner-display.cfm?photogID=2006"
           class="w-40"
         />
+        <a
+          target="_blank"
+          href="https://www.fotografi-cameramani.ro/foto-video-by-raian-visual_6123"
+        >
+          <img
+            class="object-cover w-15"
+            alt="Fotografi-Cameramani.ro"
+            src="https://www.fotografi-cameramani.ro/layout/standard/images/logos/svg/fotografi-cameramani-fundal-inchis-color.svg"
+          />
+        </a>
       </div>
     </div>
 

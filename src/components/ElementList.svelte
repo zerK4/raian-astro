@@ -4,6 +4,7 @@
   import images from "../data/images.json";
   import { onMount } from "svelte";
   import DynamicGallery from "./DynamicGallery.svelte";
+  import fetchApi from "../utils/strapi";
 
   let url;
   let size = 20;
@@ -12,8 +13,14 @@
   let imageId: string;
   let data;
 
-  onMount(() => {
+  onMount(async () => {
     console.log(checkMediaType(window.location.pathname), "the location");
+    try {
+      const { data } = await fetchApi({ endpoint: "images?populate=*" });
+      console.log(data, "the data");
+    } catch (err: any) {
+      console.log(err.message, "got an error");
+    }
     if (checkMediaType(window.location.pathname) === "photo") {
       data = images;
     } else if (checkMediaType(window.location.pathname) === "video") {

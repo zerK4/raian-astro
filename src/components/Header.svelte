@@ -16,10 +16,6 @@
       link: `/video`,
     },
     {
-      name: "Blog",
-      link: `/blog`,
-    },
-    {
       name: "Oferte",
       link: `/oferte`,
     },
