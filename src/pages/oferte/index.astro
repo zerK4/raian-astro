@@ -6,7 +6,7 @@ try {
   const data = await fetchApi({ endpoint: "ofertes?populate=*" });
 
   console.log(data, "the reveiced data");
-} catch (err) {
+} catch (err: any) {
   console.log(err.message);
 }
 ---
