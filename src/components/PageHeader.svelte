@@ -7,15 +7,11 @@
       id: "toate",
     },
     {
-      name: "Nunta",
+      name: "Nuntă",
       id: "nunta",
     },
     {
-      name: "Eveniment",
-      id: "evenimente",
-    },
-    {
-      name: "Comerciala",
+      name: "Comercială",
       id: "comercial",
     },
   ];
