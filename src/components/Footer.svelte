@@ -3,6 +3,7 @@
   import { isComplete } from "../utils/index";
   import axios from "axios";
   import type { UserFormInterface } from "../types/defaults";
+  import type React from "react";
 
   let completeError: any;
   let loading: boolean = false;
@@ -60,7 +61,7 @@
       <div class="flex w-full items-start justify-start md:w-[60%]">
         <div class="flex h-fit w-[80%] flex-col gap-2 text-sm">
           <a href="/">
-            <button class="link relative">Home</button>
+            <button class="link relative">Acasă</button>
           </a>
           <a href="/photo">
             <button class="link relative">Galerie Foto</button>
@@ -72,7 +73,7 @@
             <button class="link relative">Blog</button>
           </a>
           <a href="/offer">
-            <button class="link relative">Oferta</button>
+            <button class="link relative">Oferte</button>
           </a>
         </div>
 
@@ -120,88 +121,88 @@
           />
         </a>
       </div>
-    </div>
 
-    <form class="flex w-full flex-col gap-2 sm:w-[50%]" id="contact">
-      <label class="flex flex-col"
-        >E-mail
-        <input
-          bind:value={user.email}
-          name="email"
-          type="email"
-          class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
-          placeholder="email@email.com"
-        />
-      </label>
-      <label class="flex flex-col"
-        >Nume
-        <input
-          bind:value={user.name}
-          name="name"
-          type="text"
-          class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
-          placeholder="Nume, Prenume"
-        />
-      </label>
-      <label class="flex flex-col">
-        Data
-        <input
-          bind:value={user.date}
-          name="date"
-          type="date"
-          class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
-          placeholder="Alegeti data"
-        />
-      </label>
-      <label class="flex flex-col">
-        Tipul evenimentului
-        <input
-          bind:value={user.event}
-          name="type"
-          type="text"
-          class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
-          placeholder="Nunta, botez, etc."
-        />
-      </label>
-      <label class="flex flex-col">
-        Telefon
-        <input
-          bind:value={user.phone}
-          name="phone"
-          type="text"
-          class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
-          placeholder="0000 000 000"
-        />
-      </label>
-      <label class="flex flex-col">
-        Mesaj
-        <textarea
-          bind:value={user.message}
-          name="message"
-          class="movement rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
-          placeholder="Introdu mesajul tau"
-        />
-      </label>
-      <button
-        on:click={(e) => sendEmail(e)}
-        type="submit"
-        class={`movement flex h-[2.5rem] items-center justify-center rounded-md bg-[#C78665] text-white hover:opacity-100 ${
-          completeError !== ""
-            ? "font-semibold text-red-500 opacity-100"
-            : "font-normal text-white opacity-50"
-        }`}
-      >
-        {#if loading}
-          <span class="loader h-6 w-6 border-[2px]" />
-        {:else if sent}
-          <span class="">Mesaj trimis!</span>
-        {:else}
-          <span class="">Trimite</span>
-        {/if}
-      </button>
-    </form>
-  </div>
-  <div class="absolute bottom-2 w-full text-center">
-    &copy; Raian Visual 2018-{year}
+      <form class="flex w-full flex-col gap-2 sm:w-[50%]" id="contact">
+        <label class="flex flex-col"
+          >E-mail
+          <input
+            bind:value={user.email}
+            name="email"
+            type="email"
+            class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
+            placeholder="email@email.com"
+          />
+        </label>
+        <label class="flex flex-col"
+          >Nume
+          <input
+            bind:value={user.name}
+            name="name"
+            type="text"
+            class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
+            placeholder="Nume, Prenume"
+          />
+        </label>
+        <label class="flex flex-col">
+          Data
+          <input
+            bind:value={user.date}
+            name="date"
+            type="date"
+            class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
+            placeholder="Alegeti data"
+          />
+        </label>
+        <label class="flex flex-col">
+          Tipul evenimentului
+          <input
+            bind:value={user.event}
+            name="type"
+            type="text"
+            class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
+            placeholder="Nunta, botez, etc."
+          />
+        </label>
+        <label class="flex flex-col">
+          Telefon
+          <input
+            bind:value={user.phone}
+            name="phone"
+            type="text"
+            class="movement h-[2.5rem] rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
+            placeholder="0000 000 000"
+          />
+        </label>
+        <label class="flex flex-col">
+          Mesaj
+          <textarea
+            bind:value={user.message}
+            name="message"
+            class="movement rounded-md border-2 border-neutral-800 bg-neutral-800 px-2 outline-none placeholder:text-sm focus:border-[#C78665]"
+            placeholder="Introdu mesajul tau"
+          />
+        </label>
+        <button
+          on:click={(e) => sendEmail(e)}
+          type="submit"
+          class={`movement flex h-[2.5rem] items-center justify-center rounded-md bg-[#C78665] text-white hover:opacity-100 ${
+            completeError !== ""
+              ? "font-semibold text-red-500 opacity-100"
+              : "font-normal text-white opacity-50"
+          }`}
+        >
+          {#if loading}
+            <span class="loader h-6 w-6 border-[2px]" />
+          {:else if sent}
+            <span class="">Mesaj trimis!</span>
+          {:else}
+            <span class="">Trimite</span>
+          {/if}
+        </button>
+      </form>
+    </div>
+    <div class="absolute bottom-2 w-full text-center">
+      &copy; Foto Video by Raian Visual {year}
+    </div>
   </div>
 </div>

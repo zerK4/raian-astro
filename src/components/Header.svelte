@@ -4,7 +4,7 @@
 
   const navItems = [
     {
-      name: "Home",
+      name: "Acasă",
       link: `/`,
     },
     {
@@ -20,7 +20,7 @@
       link: `/oferte`,
     },
     {
-      name: "Politica",
+      name: "Politică",
       link: `/politica`,
     },
     {
