@@ -52,74 +52,78 @@
 </script>
 
 <div
-  class="footer flex h-fit items-center justify-center bg-neutral-900 py-10 text-neutral-300"
+  class="footer flex h-fit items-center justify-center bg-neutral-900 py-10 text-neutral-300 w-screen"
 >
   <div
-    class="flex w-full flex-col items-center justify-between gap-10 px-6 sm:flex-row"
+    class="flex w-screen flex-col items-center justify-center gap-10 px-6 sm:flex-row"
   >
-    <div class="flex w-full md:px-0 md:w-[60%] flex-col items-start gap-10">
-      <div class="flex w-full items-start justify-start md:w-[60%]">
-        <div class="flex h-fit w-[80%] flex-col gap-2 text-sm">
-          <a href="/">
-            <button class="link relative">Acasă</button>
-          </a>
-          <a href="/photo">
-            <button class="link relative">Galerie Foto</button>
-          </a>
-          <a href="/video">
-            <button class="link relative">Galerie Video</button>
-          </a>
-          <a href="/desc">
-            <button class="link relative">Blog</button>
-          </a>
-          <a href="/offer">
-            <button class="link relative">Oferte</button>
-          </a>
+    <div
+      class="flex md:px-0 w-full md:w-[70%] flex-col md:flex-row justify-between items-center gap-10"
+    >
+      <div class="flex flex-col">
+        <div class="flex w-full items-start justify-start md:w-[60%]">
+          <div class="flex h-fit w-[80%] flex-col gap-2 text-sm">
+            <a href="/">
+              <button class="link relative">Acasă</button>
+            </a>
+            <a href="/photo">
+              <button class="link relative">Galerie Foto</button>
+            </a>
+            <a href="/video">
+              <button class="link relative">Galerie Video</button>
+            </a>
+            <a href="/desc">
+              <button class="link relative">Blog</button>
+            </a>
+            <a href="/offer">
+              <button class="link relative">Oferte</button>
+            </a>
+          </div>
+
+          <div class="flex w-[50%] flex-col items-end gap-2 sm:items-center">
+            <a href="https://www.facebook.com/raianvisual">
+              <button class="">
+                <span class="movement text-3xl hover:text-[#C78665]"
+                  >{@html facebookIcon}</span
+                >
+              </button>
+            </a>
+            <a href="https://www.instagram.com/raianvisual/">
+              <button class="">
+                <span class="movement text-3xl hover:text-[#C78665]"
+                  >{@html instagramIcon}</span
+                >
+              </button>
+            </a>
+            <a href="https://www.youtube.com/channel/UCggJuYrzABVg4Th0BplYvdg">
+              <button class="">
+                <span class="movement text-3xl hover:text-[#C78665]"
+                  >{@html youtubeIcon}</span
+                >
+              </button>
+            </a>
+          </div>
         </div>
 
-        <div class="flex w-[50%] flex-col items-end gap-2 sm:items-center">
-          <a href="https://www.facebook.com/raianvisual">
-            <button class="">
-              <span class="movement text-3xl hover:text-[#C78665]"
-                >{@html facebookIcon}</span
-              >
-            </button>
-          </a>
-          <a href="https://www.instagram.com/raianvisual/">
-            <button class="">
-              <span class="movement text-3xl hover:text-[#C78665]"
-                >{@html instagramIcon}</span
-              >
-            </button>
-          </a>
-          <a href="https://www.youtube.com/channel/UCggJuYrzABVg4Th0BplYvdg">
-            <button class="">
-              <span class="movement text-3xl hover:text-[#C78665]"
-                >{@html youtubeIcon}</span
-              >
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <div
-        class="flex flex-col md:flex-row items-center justify-center gap-2 w-full"
-      >
-        <iframe
-          title="Raian visual on fearless photographers."
-          src="https://www.fearlessphotographers.com/banner-display.cfm?photogID=2006"
-          class="w-40"
-        />
-        <a
-          target="_blank"
-          href="https://www.fotografi-cameramani.ro/foto-video-by-raian-visual_6123"
+        <div
+          class="mt-10 flex flex-col md:flex-row items-center justify-center gap-2 w-full"
         >
-          <img
-            class="object-cover w-15"
-            alt="Fotografi-Cameramani.ro"
-            src="https://www.fotografi-cameramani.ro/layout/standard/images/logos/svg/fotografi-cameramani-fundal-inchis-color.svg"
+          <iframe
+            title="Raian visual on fearless photographers."
+            src="https://www.fearlessphotographers.com/banner-display.cfm?photogID=2006"
+            class="w-40"
           />
-        </a>
+          <a
+            target="_blank"
+            href="https://www.fotografi-cameramani.ro/foto-video-by-raian-visual_6123"
+          >
+            <img
+              class="object-cover w-15"
+              alt="Fotografi-Cameramani.ro"
+              src="https://www.fotografi-cameramani.ro/layout/standard/images/logos/svg/fotografi-cameramani-fundal-inchis-color.svg"
+            />
+          </a>
+        </div>
       </div>
 
       <form class="flex w-full flex-col gap-2 sm:w-[50%]" id="contact">
