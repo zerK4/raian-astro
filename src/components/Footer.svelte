@@ -3,6 +3,7 @@
   import { isComplete } from "../utils/index";
   import axios from "axios";
   import type { UserFormInterface } from "../types/defaults";
+  import type React from "react";
 
   let completeError: any;
   let loading: boolean = false;
@@ -60,7 +61,7 @@
       <div class="flex w-full items-start justify-start md:w-[60%]">
         <div class="flex h-fit w-[80%] flex-col gap-2 text-sm">
           <a href="/">
-            <button class="link relative">Home</button>
+            <button class="link relative">Acasă</button>
           </a>
           <a href="/photo">
             <button class="link relative">Galerie Foto</button>
@@ -72,7 +73,7 @@
             <button class="link relative">Blog</button>
           </a>
           <a href="/offer">
-            <button class="link relative">Oferta</button>
+            <button class="link relative">Oferte</button>
           </a>
         </div>
 
@@ -107,8 +108,9 @@
           src="https://www.fearlessphotographers.com/banner-display.cfm?photogID=2006"
           class="w-40"
         />
+        </div>
       </div>
-    </div>
+
 
     <form class="flex w-full flex-col gap-2 sm:w-[50%]" id="contact">
       <label class="flex flex-col"
@@ -190,6 +192,6 @@
     </form>
   </div>
   <div class="absolute bottom-2 w-full text-center">
-    &copy; Raian Visual 2018-{year}
+    &copy; Foto Video by Raian Visual {year}
   </div>
 </div>
