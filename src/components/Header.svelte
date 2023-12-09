@@ -60,11 +60,12 @@
     class="flex items-center justify-between mx-auto w-full lg:w-[90%] xl:w-[70%] h-full"
   >
     <div class="logo">
-      <h1 class="font-flower text-4xl">Raian Visual</h1>
+      <h1 class="font-flower text-3xl">Foto Video by Raian Visual</h1>
     </div>
     <button class="md:hidden flex p-2" on:click={navHandler}>
       {@html hamMenu}
     </button>
+
     <div
       class={`${
         navActive
@@ -72,15 +73,18 @@
           : "-translate-y-[300vw] md:translate-y-0 bg-transparent"
       } fixed items-start pt-20 md:pt-0 md:px-10 z-40 movement h-screen left-0 top-0 flex-col md:flex-row w-screen md:w-auto gap-6 md:relative flex md:items-center md:gap-6 md:h-full`}
     >
+
+
       <button
         on:click={navHandler}
         class="md:hidden flex absolute top-4 right-4 hover:opacity-50 movement border-2 p-2 border-[#C78665] text-[#C78665] rounded-full"
       >
         {@html closeBu}
       </button>
+
+
       <div
-        class="flex flex-col w-full md:w-fit pb-4 md:pb-0 md:flex-row items-end md:items-center gap-4 md:gap-4"
-      >
+        class="flex flex-col w-full md:w-fit pb-80 md:pb-80 md:flex-row items-end md:items-center gap-4 md:gap-4">
         {#each navItems as item, i}
           <a href={item.link} class="flex items-center md:link group/navItem">
             <span
@@ -96,6 +100,8 @@
           </a>
         {/each}
       </div>
+
+      
     </div>
   </div>
 </div>

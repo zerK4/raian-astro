@@ -14,7 +14,7 @@
     <div
       class="flex absolute custom-circle opacity-80 backdrop-blur-md flex-col items-center justify-center gap-2 bg-[#C78665] md:h-[35rem] md:w-[35rem] sm:h-[24rem] sm:w-[24rem] h-[19rem] w-[19rem] rounded-full"
     >
-      <h1 class="sm:text-[4rem] text-[3rem] font-flower">Raian Visual</h1>
+      <h1 class="sm:text-[3rem] text-[3rem] font-flower">Foto Video <br>Raian Visual</h1>
       <div class="group/bh flex gap-2 items-center z-30">
         <a href={`/photo`}>
           <button class=""> Hai să vezi portofoliul! </button>
@@ -29,7 +29,7 @@
       </div>
       <div>
         <a href="/offer">
-          <button class=""> Calendar disponibil! </button>
+          <button class=""> Calendar disponibil 2024-2025!</button>
         </a>
       </div>
     </div>
